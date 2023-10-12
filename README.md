@@ -40,7 +40,11 @@ Before you begin, ensure you have the following software installed:
 
 #### Frontend (React)
 
-1. Navigate to the `/reactjs` directory.
+1. Navigate to the `/reactjs` directory then to '/my-app' 
+    ```
+    cd /reactjs
+    cd my-app
+    ```
 2. Install the required Node.js packages.
     ```
     npm install

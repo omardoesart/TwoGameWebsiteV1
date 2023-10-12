@@ -1,4 +1,4 @@
-# TwoGame Website 
+# TwoGame Website v1
 
 a full website that allows users to register and play 2 different games
 NOTE: currently in v1, only a single game that is developed. Second game will be delevered in v2
@@ -64,3 +64,10 @@ NOTE: 'http://localhost:3000/' returns nothin for this version.
 
 - [FastAPI](https://fastapi.tiangolo.com/) - The backend framework used
 - [React](https://reactjs.org/) - The frontend library used
+
+
+## ToDoList for verson 2
+
+- Create Game2 with corresponding sheet in the database
+- edit the frontend to optimize user experience (a menu with logout and profile button, notify if the answer is correct or not, add some css in the frontend, etc)
+- new ideas..

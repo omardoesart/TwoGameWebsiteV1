@@ -1,6 +1,7 @@
 from fastapi import Depends, FastAPI
 from routes.home import h_router
 from routes.game1 import g1_router
+from routes.game2 import g2_router
 
 from jose import JWTError, jwt
 from fastapi import FastAPI, Depends, HTTPException, status , Body, Query
@@ -35,6 +36,7 @@ app.add_middleware(
 
 app.include_router(h_router)
 app.include_router(g1_router)
+app.include_router(g2_router)
 
 @app.get("/")
 async def read_root():

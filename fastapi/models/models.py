@@ -126,8 +126,8 @@ class Player(Model):
 
 class LeaderBoardG1(Model):
     name = fields.CharField(50)
-    game1_score = fields.IntField(default = 0)
-    time_taken = fields.FloatField(default=0.0)
+    game1_score = fields.FloatField(default = 0)
+    time_taken = fields.IntField(default=0.0)
     @classmethod
     async def leaderboard(cls):
         ordered_data = await cls.all().order_by('-game1_score')
@@ -143,12 +143,17 @@ class LeaderBoardG1(Model):
     
 class LeaderBoardG2(Model):
     name = fields.CharField(50)   
-    game2_score = fields.IntField(default = 0)
-    time_taken = fields.FloatField(default=0.0)
+    game2_score = fields.FloatField(default = 0)
     @classmethod 
     async def leaderboard(cls):
         ordered_data = await cls.all().order_by('-game2_score')
-        return ordered_data
+        return cls._exclude_id_from_data(ordered_data)
 
+    @staticmethod
+    def _exclude_id_from_data(data):
+        return [
+            {key: value for key, value in item.__dict__.items() if key != 'id'}
+            for item in data
+        ]
 
 

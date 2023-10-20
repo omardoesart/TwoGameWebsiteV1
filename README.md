@@ -75,5 +75,8 @@ NOTE: 'http://localhost:3000/' returns nothin for this version.
 - Create Game2 with corresponding sheet in the database
 - edit the frontend to optimize user experience (a menu with logout and profile button, notify if the answer is correct or not, add some css in the frontend, etc)
 - new ideas..
+<<<<<<< HEAD
 - just solved a bug in the login page :))
 - make it direct to the welcome page if not authenticated :))
+=======
+>>>>>>> 753fca5838ff270b10a0e36c7d6a7d8caffd64c7

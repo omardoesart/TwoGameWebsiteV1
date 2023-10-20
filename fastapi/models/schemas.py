@@ -37,6 +37,10 @@ class GameOneOutput(BaseModel):
     message : str
 
 
+class GameTwoInput(BaseModel):
+    points : int
+    
+
     
 class User_PY(BaseModel):
     name : str

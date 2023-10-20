@@ -1,7 +1,6 @@
-# TwoGame Website v1
+# TwoGame Website v1.3
 
 a full website that allows users to register and play 2 different games
-NOTE: currently in v1, only a single game that is developed. Second game will be delevered in v2
 
 ## Getting Started
 
@@ -70,13 +69,13 @@ NOTE: 'http://localhost:3000/' returns nothin for this version.
 - [React](https://reactjs.org/) - The frontend library used
 
 
-## ToDoList for verson 2
+## updates v1.3
 
-- Create Game2 with corresponding sheet in the database
-- edit the frontend to optimize user experience (a menu with logout and profile button, notify if the answer is correct or not, add some css in the frontend, etc)
-- new ideas..
-<<<<<<< HEAD
+- Created Game2 with corresponding sheet in the database
+- edited the frontend to optimize user experience 
 - just solved a bug in the login page :))
-- make it direct to the welcome page if not authenticated :))
-=======
->>>>>>> 753fca5838ff270b10a0e36c7d6a7d8caffd64c7
+- made the site direct to the welcome page if not authenticated :))
+
+## ToDoList for verson v1.4
+ - work on the frontend - make it more good looking with some css -
+ - add a big leaderboard to display the sum of players score in each game (player name - total score game 1 - total score game 2)

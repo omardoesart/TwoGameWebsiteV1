@@ -75,7 +75,4 @@ NOTE: 'http://localhost:3000/' returns nothin for this version.
 - edited the frontend to optimize user experience 
 - just solved a bug in the login page :))
 - made the site direct to the welcome page if not authenticated :))
-
-## ToDoList for verson v1.4
- - work on the frontend - make it more good looking with some css -
- - add a big leaderboard to display the sum of players score in each game (player name - total score game 1 - total score game 2)
+- edited the logic for game 1, to randomize the equation totally each time

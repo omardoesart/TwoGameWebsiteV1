@@ -26,6 +26,7 @@ class GameOne(BaseModel):
 class GameOneInput(BaseModel):
     Ans : int
     time_taken : int
+    ansRecieved : int
 
 class GameOneOutput(BaseModel):
     '''

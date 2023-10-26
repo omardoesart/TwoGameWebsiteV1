@@ -67,23 +67,40 @@ async def display_game1(user=Depends(get_user)):
     '''
     This API is dedicated to display the question of game 1
     '''    
-    # return equation, id equation
-    game_id = random.randint(0,9)
-    game = game_cache[game_id]
-    equation = str(game['FirstOperand']) + " " + str(game['OperationSymbol']) + " " + str(game['SecondOperand'])
-    return {'equation': equation, "game_id" : game_id}
-
-@g1_router.post('/game1/{game_id}')
-async def fitch_ans1( game_id: int , Ans: GameOneInput, user=Depends(get_user)):
     
+    CashMem_sympoles = {
+    1: '+',     # Sum
+    2: '-',     # Subtract
+    3: '*',     # Multiply
+    4: '/'      # Divide
+    }
+    op1 = random.randint(0,9)
+    op2 = random.randint(0,9)
+    operation_id = random.randint(1, 3)
+    game_data = {
+        'FirstOperand': op1,
+        'SecondOperand': op2,
+        'OperationId': operation_id,
+        'OperationSymbol': CashMem_sympoles[operation_id],
+        'Answer': calculate_answer(op1, op2, operation_id)
+    }
+
+
+    ans = game_data['Answer']
+    # return equation, id equation
+    equation = str(game_data['FirstOperand']) + " " + str(game_data['OperationSymbol']) + " " + str(game_data['SecondOperand'])
+    return {'equation': equation, "ans" : ans}
+
+@g1_router.post('/game1_ans')
+async def fitch_ans1(Ans: GameOneInput, user=Depends(get_user)):
+ 
     '''
     This API is dedicated to fetch the answer of game 1
     and recalculate the score - update it, it also may display it
     '''
-    game = game_cache[game_id]
     gameout = {}
     
-    if (Ans.Ans == game['Answer']):
+    if (Ans.Ans == Ans.ansRecieved):
         #calc the score
         gameout['score'] = 10 / Ans.time_taken
         gameout['status'] = True

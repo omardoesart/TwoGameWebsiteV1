@@ -33,7 +33,8 @@ async def login(login_pydantic: LoginPydantic):
     # V2 add the hash thing
     v = pwd_context.verify(reg_dict["password"], user.get_password())
     if not v:
-        return {'message': 'Password is not correct'}
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Password is not correct!')
+    
     
     # the token generation
     token = jwt.encode({"id": user.id}, JWT_SECRET, algorithm="HS256")
